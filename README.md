@@ -8,11 +8,11 @@ This repository showcases my work as a **Software QA Analyst**, focusing on real
 
 ```bash
 qa-portfolio-shontelle-nicole/
-├── 01-live-app-testing/      # Manual testing on public apps (OrangeHRM, SauceDemo)
-├── 02-api-testing/           # Postman collections + API test documentation
-├── 03-test-automation/       # Selenium WebDriver automation projects
-├── 04-learning-lab/          # Deep dives, analysis, QA artifacts
-├── 05-python-projects/       # Python scripting and logic-based projects
+├── 01-live-app-testing/      # Manual testing on public apps (OrangeHRM, SauceDemo) 
+├── 02-api-testing/           # Postman collections + API test documentation (In progress)
+├── 03-test-automation/       # Selenium WebDriver automation projects (In progress)
+├── 04-learning-lab/          # Deep dives, analysis, QA artifacts (In progress)
+├── 05-python-projects/       # Python scripting and logic-based projects (In progress)
 ```
 
 ---
