@@ -1,5 +1,5 @@
 # 🐛 Defect Log – GoRest API Manual Testing
-
+> **Note:** Since this project involved manual API testing without a frontend UI, screenshots are not applicable. All defects listed below were simulated for demonstration purposes, based on potential API response discrepancies observed or theorized during test planning.
 ---
 
 ## Defect 001 – Create User without Email Succeeds (Unexpected)
