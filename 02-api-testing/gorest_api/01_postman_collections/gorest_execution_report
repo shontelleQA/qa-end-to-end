@@ -1,0 +1,48 @@
+# 🧪 GoRest API – Manual Test Execution Report
+
+This document captures the results of manual execution for the GoRest API User CRUD test cases. Testing was performed using Postman and tracked inside Qase.io for structured reporting.
+
+---
+
+## 🛠️ Test Environment
+
+| Field | Value |
+|------|-------|
+| Environment | GoRest Public API |
+| Host | https://gorest.co.in/public/v2 |
+| Authentication | Bearer Token |
+| Execution Tool | Postman vXX.X (your version) |
+| Test Management | Qase.io |
+
+---
+
+## 📋 Test Summary
+
+| Test Case | Status | Notes |
+|-----------|--------|-------|
+| Create User with Valid Data | ✅ Pass | 201 Created. Fields matched input. |
+| Create User with Missing Email | ✅ Pass | 422 Unprocessable Entity. Email field correctly flagged as missing. |
+| Create User with Invalid Email Format | ✅ Pass | 422 Unprocessable Entity. Invalid email format correctly detected. |
+| Create User with Duplicate Email | ✅ Pass | 422 Unprocessable Entity. Duplicate email rejected. |
+| Read Users – List All Users | ✅ Pass | 200 OK. User list retrieved. Pagination present. |
+| Update Existing User with Valid Data | ✅ Pass | 200 OK. Name and status updated correctly. |
+| Delete Existing User | ✅ Pass | 204 No Content. User deleted. |
+| Attempt to Update a Deleted User | ✅ Pass | 404 Not Found. Resource no longer available. |
+
+---
+
+## 🐛 Defects Found
+
+_No defects observed during manual CRUD execution._
+
+(If any defects appear in future runs, log them under `03-defects/defect-log.md`.)
+
+---
+
+## 📝 Additional Notes
+
+- Test cases are written with automation readiness in mind.
+- Environment variables (`{{baseUrl}}`, `{{token}}`, `{{userId}}`) are actively used to enable scalable test execution.
+- All test case artifacts are stored inside this project repository for transparency and future automation expansion.
+
+---
