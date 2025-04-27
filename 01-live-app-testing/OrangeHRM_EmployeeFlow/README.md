@@ -1,70 +1,95 @@
-# 🧪 GoRest API – Manual API Testing Project
+# 🟠 OrangeHRM Employee Management Testing Project
 
-This project documents manual functional testing of the public GoRest API, focusing on CRUD operations for user management.
+This project documents hands-on QA testing of the **Employee Management** workflow inside the [OrangeHRM Open Source Demo](https://opensource-demo.orangehrmlive.com/).
 
-The goal was to simulate realistic API validation scenarios a QA Engineer would encounter when testing a SaaS or CRM-style backend system — including positive, negative, and authorization-based testing workflows. The project was manually executed using Postman and tracked inside Qase.io for structured reporting.
-
----
-
-## 🎯 Project Objectives
-
-- Validate core CRUD operations (`Create`, `Read`, `Update`, `Delete`) for the `/users` endpoints.
-- Cover positive scenarios (valid data) and negative scenarios (invalid/missing/duplicate data).
-- Test authentication behavior using bearer tokens (positive and negative authorization cases).
-- Document testing artifacts in a recruiter-readable, portfolio-ready structure.
-- Prepare all test cases for future automation using Python and API frameworks.
+It simulates a real sprint cycle — covering test planning, manual test case design, execution tracking, and defect reporting — using live application flows, real test data, and practical QA artifacts.
 
 ---
 
-## 🛠️ Tools and Technologies
+## 📁 Project Structure
+
+```bash
+01-live-app-testing/
+└── orangehrm_employeeflow/
+    ├── Test_Plan.md
+    ├── Test_Cases.xlsx
+    ├── Execution_Log.xlsx
+    ├── Defect_Reports.md
+    ├── RTM.xlsx
+    ├── screenshots/
+    └── README.md
+```
+
+---
+
+## 🎯 Scope of Testing
+
+- User login and logout flows
+- Adding a new employee (basic required fields + optional photo upload)
+- Searching for an employee in the directory
+- Editing employee details
+- Form validation (error handling on required fields)
+- Field reset/cancel functionality
+- Basic UI feedback (form resets, confirmation messages)
+
+---
+
+## ⚙️ Tools & Tech Used
 
 | Tool | Purpose |
 |------|---------|
-| **Postman** | Manual API request execution |
-| **Qase.io** | Test management and execution tracking |
-| **GitHub** | Portfolio version control |
-| **Markdown** | Test documentation and reporting |
+| Qase Test Management | Test case organization and execution tracking |
+| Google Sheets (Excel export) | Test case management and RTM backup |
+| VS Code + GitHub | Portfolio and artifact version control |
+| Markdown | Documentation and reporting |
+| Windows Snipping Tool | Screenshots for test evidence |
+
+> 📌 **Note:** While Jira is a common industry standard for defect tracking and test management, this project uses [Qase.io](https://qase.io/) to simulate real-world workflows. Qase provides similar functionality for organizing test cases, managing execution cycles, and tracking defects — aligning closely with Agile QA practices.
+
 
 ---
 
-## 🔐 Authentication
+## 📂 Project Artifacts
 
-- The GoRest API requires authentication for `POST`, `PATCH`, and `DELETE` requests.
-- A Bearer Token is required and stored securely in the Postman environment file (`gorest-env.json`).
-- The token is automatically referenced in Authorization headers using the Postman variable `{{token}}`.
-
----
-
-## 🌐 Environment Setup
-
-| Variable | Purpose |
-|----------|---------|
-| `{{baseUrl}}` | Base URL for all API requests (`https://gorest.co.in/public/v2`) |
-| `{{token}}` | Bearer Token for secured endpoints |
-| `{{userId}}` | Captured dynamically during Create User tests for use in Update/Delete workflows |
-| `{{postId}}` | Captured dynamically during Post creation tests (future scope) |
-
-All environment variables are preconfigured in the `gorest-env.json` file for seamless request execution.
+| Artifact | Description |
+|----------|-------------|
+| `Test_Plan.md` | Test scope, objectives, environment, risks, and strategy |
+| `Test_Cases.xlsx` | Full manual test case set (positive, negative, edge cases) |
+| `Execution_Log.xlsx` | Test run tracking and pass/fail status |
+| `Defect_Report.md` | Documented defects found during execution |
+| `RTM.xlsx` | Requirements mapped to corresponding test cases |
+| `screenshots/` | Visual evidence of tests and defects |
 
 ---
 
-## 📂 Folder Structure Overview
+## 🎯 Role Alignment
 
-| Folder | Purpose |
-|--------|---------|
-| `01-postman-collections/` | Postman collection, environment, and execution reports |
-| `02-test-cases/` | Structured manual test cases for CRUD, auth, and nested resource testing |
-| `03-defects/` | Bug logging if defects are found during manual execution |
-| `04-automation-notes/` | Future automation ideas and candidate tests for Python scripting |
-| `05-docs/` | Glossary, references, and supporting documentation |
+This project demonstrates core QA analyst responsibilities:
+
+- ✅ Manual test case design and structured execution
+- ✅ Defect identification, logging, and retesting workflows
+- ✅ Requirements mapping and traceability practices
+- ✅ Exploratory mindset for edge cases and validation scenarios
+- ✅ Agile sprint simulation with deliverable artifacts
+
+---
+
+## 🔁 Sprint Summary
+
+| Sprint | Focus | Result |
+|--------|-------|--------|
+| Sprint 1 | Core Employee Flow | 12 test cases executed, 2 defects identified and retested |
+| Sprint 2 (Planned) | Permissions Testing | Extend coverage to role-based access (future enhancement) |
 
 ---
 
-## ✅ Status
+## 📫 Let’s Connect
 
-- Manual test cases: **Completed** (Create, Read, Update, Delete + negative scenarios)
-- Manual test execution: **Completed** (Logged via Postman and Qase.io)
-- Defects found: **None observed** during CRUD testing phase
-- Ready for future automation expansion using Python and test frameworks
+I’m open to QA opportunities (manual or hybrid) across healthcare, edtech, and mission-driven products.  
+Let's connect for a **coffee chat** ☕ or to talk all things quality and testing:
+
+📍 [Connect with me on LinkedIn](https://www.linkedin.com/in/nicole-nealy/)
 
 ---
+
+🧪 *Built with real QA process. Documented with care. Tested like a user, thought through like a developer.*
