@@ -1,0 +1,18 @@
+# Ignore temporary files
+*.txt
+*.log
+
+# Ignore system files
+Thumbs.db
+.DS_Store
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore Python cache files (if you do automation later)
+__pycache__/
+*.pyc
+
+# Ignore environment files (if you ever do API auth etc.)
+.env
