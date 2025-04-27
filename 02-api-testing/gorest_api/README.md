@@ -68,3 +68,10 @@ All environment variables are preconfigured in the `gorest-env.json` file for se
 - Ready for future automation expansion using Python and test frameworks
 
 ---
+
+## ⚙️ Automation Expansion (Phase 1 Complete)
+
+- Phase 1 automation scripts have been added inside `05_test_automation/`.
+- Python + Requests used for scripting selected Create, Negative Create, and Authorization test cases.
+- Scripts are standalone, beginner-to-mid level recruiter friendly, and designed for easy future migration to Pytest.
+- Manual and automated validation now both documented in this project.
