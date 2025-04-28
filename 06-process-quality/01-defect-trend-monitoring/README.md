@@ -14,7 +14,19 @@ The goal was to demonstrate the ability to:
 - Summarize findings in a structured, actionable format
 - Recommend remediations to leadership for process improvement
 
-This project mirrors core QA Specialist responsibilities, including monitoring performance, supporting audit readiness, and identifying continuous improvement opportunities — key expectations for roles such as QA Specialist at Centene Corporation.
+This project mirrors core QA Specialist responsibilities, including monitoring performance, supporting audit readiness, and identifying continuous improvement opportunities — key expectations for roles such as QA Analyst or Quality Assurance Analyst.
+
+---
+
+## 📂 Project Structure
+```
+06-process-quality/ 
+└── 01-defect-trend-monitoring/ 
+├── defect-log.xlsx 
+├── weekly-trend-report.md 
+├── final-summary.md 
+└── README.md
+```
 
 ---
 
