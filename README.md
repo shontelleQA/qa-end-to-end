@@ -13,7 +13,17 @@ qa-portfolio-shontelle-nicole/
 ├── 03-test-automation/       # Selenium WebDriver automation projects (In progress)
 ├── 04-learning-lab/          # Deep dives, analysis, QA artifacts (In progress)
 ├── 05-python-projects/       # Python scripting and logic-based projects (In progress)
+├── 06-process-quality/       # Process QA projects – audits, SOPs, and defect monitoring
 ```
+---
+
+## ▶️ Process QA Projects
+
+This section highlights structured Process QA work, including defect monitoring, SOP documentation, and internal audit simulations aligned to healthcare and insurance industry standards.
+
+- [📈 Defect Trend Monitoring and Reporting – MedAccess Claims Portal (March 2025)](06-process-quality/01-defect-trend-monitoring/)
+- [🔒 SOP Documentation and QA Readiness Guide – User Login Process (March 2025)](06-process-quality/02-sop-qa-readiness/)
+- [🛡️ Internal Audit Simulation – MedAccess Claims Portal (March 2025)](06-process-quality/03-internal-audit-simulation/)
 
 ---
 
@@ -27,6 +37,7 @@ This portfolio reflects work done in the scope of a QA Analyst or Manual QA role
 - ✅ Root cause investigation and regression testing
 - ✅ SQL data checks and backend flow validation
 - ✅ Agile-aligned documentation and sprint-style delivery
+- ✅ Process quality monitoring, internal auditing, and SOP validation
 
 Each project includes real artifacts — test plans, screenshots, traceability matrices, execution logs, and defect summaries — to simulate how I contribute in a real team setting.
 
