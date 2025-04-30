@@ -56,7 +56,7 @@ All environment variables are preconfigured in the `gorest-env.json` file for se
 | `02-test-cases/` | Structured manual test cases for CRUD, auth, and nested resource testing |
 | `03-defects/` | Bug logging if defects are found during manual execution |
 | `04-automation-notes/` | Future automation ideas and candidate tests for Python scripting |
-| `05-docs/` | Glossary, references, and supporting documentation |
+| `05_test_automation/` | Phase 1 automation scripts using Python + Requests (Create, Negative, Auth tests) |
 
 ---
 
@@ -64,8 +64,12 @@ All environment variables are preconfigured in the `gorest-env.json` file for se
 
 - Manual test cases: **Completed** (Create, Read, Update, Delete + negative scenarios)
 - Manual test execution: **Completed** (Logged via Postman and Qase.io)
-- Defects found: **None observed** during CRUD testing phase
-- Ready for future automation expansion using Python and test frameworks
+- Defects observed:
+  - 422 validation error confirmed when required fields are missing (e.g., email)
+  - 401 Unauthorized error confirmed when using invalid tokens
+- Phase 1 automation scripts: **Completed** using Python + Requests
+- Ready for future expansion with Pytest and reporting tools
+
 
 ---
 
