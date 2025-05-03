@@ -13,6 +13,7 @@ The goal was to simulate realistic API validation scenarios a QA Engineer would 
 - Test authentication behavior using bearer tokens (positive and negative authorization cases).
 - Document testing artifacts in a recruiter-readable, portfolio-ready structure.
 - Prepare all test cases for future automation using Python and API frameworks.
+Automate selected test cases using Python + Requests as part of Phase 1 automation.
 
 ---
 
@@ -22,6 +23,9 @@ The goal was to simulate realistic API validation scenarios a QA Engineer would 
 |------|---------|
 | **Postman** | Manual API request execution |
 | **Qase.io** | Test management and execution tracking |
+| **Python 3.x** | Automation scripting |
+| **Requests** | Python library for API testing |
+| **VS Code** | Script development and editing |
 | **GitHub** | Portfolio version control |
 | **Markdown** | Test documentation and reporting |
 
@@ -52,6 +56,7 @@ All environment variables are preconfigured in the `gorest-env.json` file for se
 
 | Folder | Purpose |
 |--------|---------|
+| `00_test_plan/` | Test plan outlining scope, objectives, tools, and criteria |
 | `01-postman-collections/` | Postman collection, environment, and execution reports |
 | `02-test-cases/` | Structured manual test cases for CRUD, auth, and nested resource testing |
 | `03-defects/` | Bug logging if defects are found during manual execution |
@@ -64,9 +69,10 @@ All environment variables are preconfigured in the `gorest-env.json` file for se
 
 - Manual test cases: **Completed** (Create, Read, Update, Delete + negative scenarios)
 - Manual test execution: **Completed** (Logged via Postman and Qase.io)
-- Defects observed:
+- Defects observed: No real issues found – all error handling worked as expected
   - 422 validation error confirmed when required fields are missing (e.g., email)
   - 401 Unauthorized error confirmed when using invalid tokens
+    - 2 simulated defects logged for demonstration
 - Phase 1 automation scripts: **Completed** using Python + Requests
 - Ready for future expansion with Pytest and reporting tools
 
@@ -77,5 +83,5 @@ All environment variables are preconfigured in the `gorest-env.json` file for se
 
 - Phase 1 automation scripts have been added inside `05_test_automation/`.
 - Python + Requests used for scripting selected Create, Negative Create, and Authorization test cases.
-- Scripts are standalone, beginner-to-mid level recruiter friendly, and designed for easy future migration to Pytest.
+- I kept the scripts simple and runnable with plain Python so they’re easy to follow and reuse. Later on, I plan to refactor them using Pytest and add test reporting as the next layer of automation.
 - Manual and automated validation now both documented in this project.
