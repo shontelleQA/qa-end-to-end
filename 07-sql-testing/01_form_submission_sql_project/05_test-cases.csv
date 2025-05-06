@@ -1,4 +1,0 @@
-ID,Title,Steps,Expected Result,SQL Validation
-TC01,Submit valid form,Fill all fields and submit,Confirmation message shown,SELECT * FROM submissions WHERE email = 'test@example.com';
-TC02,Submit form without phone,"Leave phone blank, fill rest, submit",Submission accepted; phone saved as NULL,SELECT phone FROM submissions WHERE email = '...';
-TC03,Submit form with invalid email,"Enter bad email format, click submit",Form shows validation error,No new row in DB
