@@ -1,0 +1,5 @@
+TC ID,Title,Preconditions,Steps,Expected Result,SQL Validation
+TC01,Submit valid form,Form is accessible,1. Fill all fields2. Click submit,Confirmation message shownNew record created in DB,SELECT * FROM submissions WHERE email = 'nicole@example.com';
+TC02,Submit form without phone,Form is accessible,1. Fill all required fields2. Leave phone blank3. Submit,Form acceptedPhone stored as NULL,SELECT phone FROM submissions WHERE email = 'chrisb@example.com';
+TC03,Submit form with blank email,Form is accessible,1. Fill in name and message2. Leave email blank3. Submit,Validation error shownNo record created,SELECT * FROM submissions WHERE full_name = 'Riley Johnson';
+TC04,Validate service type maps correctly,Data exists in both tables,Run SQL JOIN on service_id and service_types,Returned records include correct service type for each submission,SELECT ... JOIN ...
