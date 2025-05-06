@@ -14,6 +14,8 @@ qa-portfolio-shontelle-nicole/
 ├── 04-learning-lab/          # Deep dives, analysis, QA artifacts 
 ├── 05-python-projects/       # Python scripting and logic-based projects (In progress)
 ├── 06-process-quality/       # Process QA projects – audits, SOPs, and defect monitoring
+├── 07-sql-testing/           # Backend-focused testing with SQL validation on stored form data
+
 ```
 ---
 
@@ -24,6 +26,14 @@ This section highlights structured Process QA work, including defect monitoring,
 - [📈 Defect Trend Monitoring and Reporting – MedAccess Claims Portal (March 2025)](06-process-quality/01-defect-trend-monitoring/)
 - [🔒 SOP Documentation and QA Readiness Guide – User Login Process (March 2025)](06-process-quality/02-sop-qa-readiness/)
 - [🛡️ Internal Audit Simulation – MedAccess Claims Portal (March 2025)](06-process-quality/03-internal-audit-simulation/)
+
+---
+
+## 🧮 SQL QA Projects
+
+This section focuses on backend data validation using SQL — testing what happens *after* a user submits a form, and ensuring that frontend behaviors are accurately stored in the database. These tests mimic real-world QA scenarios tied to payments, records, and service requests.
+
+- [📬 Form Submission Tracker – SQL Data Validation (May 2025)](07-sql-testing/01_form_submission_sql_project/)
 
 ---
 
