@@ -49,15 +49,14 @@ It simulates a real sprint cycle including test planning, manual test case desig
 ---
 
 ## 📂 Project Artifacts
-
 | Artifact | Description |
 |----------|-------------|
-| [Test Plan](./01-live-app-testing/OrangeHRM_EmployeeFlow/01_test_plan/Test_Plan.md) | Test scope, objectives, environment, risks, and strategy |
-| [Test Cases (xlsx)](./01-live-app-testing/OrangeHRM_EmployeeFlow/02_test_cases/test-cases-qase.xlsx) | Full manual test case set (positive, negative, edge cases) |
-| [Execution Log (pdf)](./01-live-app-testing/OrangeHRM_EmployeeFlow/03_execution_logs/execution-log-qase.pdf) | Test run tracking and pass/fail status |
-| [Defect Report (xlsx)](./01-live-app-testing/OrangeHRM_EmployeeFlow/04_defect_reports/defect-report-qase.xlsx) | Documented defects found during execution |
-| [RTM (xlsx)](./01-live-app-testing/OrangeHRM_EmployeeFlow/05_RTM/rtm.xlsx) | Requirements mapped to corresponding test cases |
-| [Screenshots](./01-live-app-testing/OrangeHRM_EmployeeFlow/06_screenshots/) | Visual evidence of tests and defects |
+| [Test Plan](./01_test_plan/Test_Plan.md) | Test scope, objectives, environment, risks, and strategy |
+| [Test Cases](./02_test_cases/) | Full manual test case set (positive, negative, edge cases) |
+| [Execution Logs](./03_execution_logs/) | Test run tracking and pass/fail status |
+| [Defect Reports](./04_defect_reports/) | Documented defects found during execution |
+| [RTM](./05_RTM/) | Requirements mapped to corresponding test cases |
+| [Screenshots](./06_screenshots/) | Visual evidence of tests and defects |
 
 
 
