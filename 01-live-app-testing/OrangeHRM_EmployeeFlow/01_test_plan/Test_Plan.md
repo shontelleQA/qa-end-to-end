@@ -81,13 +81,13 @@ This test plan defines the QA approach for validating the Employee Flow in the O
 ✅ Deliverables (Evidence)  
 - **Test Cases**: `test-cases-qase.xlsx` (full coverage set)  
 - **Execution Log**: `execution-log-qase.pdf` (pass/fail record)  
-- **Defects**: `defect-report-qase.pdf` (3 logged issues: self-as-contact, blank name, emoji rendering)  
+- **Defects**: `defect-report-qase.pdf` (2 logged issues: self-as-contact, blank name, emoji rendering)  
 - **RTM**: `rtm.xlsx` (requirements mapped to cases + defects)  
 - **Screenshots**: `/screenshots/` (visual proof of flows + bugs)  
 - **README.md**: Case-study summary (scope, risks, results)  
 - **This Test Plan**: Formal documentation of QA approach  
 
 📊 Outcomes  
-- **Defects found**: 3 functional issues tied to employee creation/validation.  
+- **Defects found**: 2 functional issues tied to employee creation/validation.  
 - **Impact**: Documented risks around input validation, user data integrity, and UI handling of special characters.  
 - **Next Step**: Recommend automation of login and employee-add flows in Selenium for regression stability.  
