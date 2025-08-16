@@ -2,17 +2,17 @@
 
 ## 📌 Project Overview
 
-This test plan covers functional testing of the **Employee Flow** in the OrangeHRM demo application. The goal is to validate that users can log in, add a new employee, and verify employee details through the admin panel. Testing includes UI validation, functional flow, and basic error handling.
+This test plan defines the QA approach for validating the Employee Flow in the OrangeHRM demo application. The objective was to ensure that critical HR workflows (login, employee creation, and record verification) function reliably in a realistic admin scenario. Testing combined functional UI validation, form validation, and exploratory checks to uncover edge cases.
 
 ---
 
 ## 🎯 Objectives
 
-- Verify that login functionality works for Admin users
-- Ensure new employee creation is successful with required details
-- Confirm added employee appears in the employee list
-- Validate field-level and form-level error messages
-- Confirm logout functionality
+- Validate Admin login/logout flows across Chrome and Firefox.  
+- Ensure new employee creation succeeds with required details.  
+- Confirm that newly added employees appear in the admin employee list.  
+- Verify field-level and form-level error handling for invalid data.  
+- Capture defects with supporting screenshots and traceability to cases. 
 
 ---
 
@@ -22,75 +22,72 @@ This test plan covers functional testing of the **Employee Flow** in the OrangeH
 - Admin login/logout
 - Navigation to PIM > Add Employee
 - Creating a new employee with valid and invalid data
-- Verifying employee details via employee list
-- Basic cross-browser validation in Firefox for login flow
+- Employee record validation via employee list  
+- Basic cross-browser validation (Chrome, Firefox)  
 
 
 ### Out of Scope
-- Backend API testing
-- Role-based access control
-- Employee document uploads
+- Backend API validation  
+- Role-based access control beyond Admin  
+- File/document upload workflows 
 
 ---
 
 ## 🧰 Test Environment
 
-- **Application URL:** https://opensource-demo.orangehrmlive.com/
-- **Test Browser(s):** Chrome (v135.0.7049.96)
-OS: (Windows 11), Firefox (v137.0.2)
-- **Test Data:** Static employee data stored in Excel
+- **URL**: https://opensource-demo.orangehrmlive.com/  
+- **Browsers**: Chrome (v135.0.7049.96), Firefox (v137.0.2)  
+- **OS**: Windows 11  
+- **Test Data**: Static employee dataset (Excel) 
 
 ---
 
 ## ⏱️ Timeline
 
-| Activity              | Duration       | Status     |
-|-----------------------|----------------|------------|
-| Test Case Design      | 1 day          | ✅ Complete |
-| Test Execution        | 1 day          | 🔄 In Progress |
-| Defect Logging        | Ongoing        | ⏳ Pending |
-| Final Reporting       | 0.5 day        | ⏳ Pending |
+| Activity | Duration | Status |  
+|----------|----------|--------|  
+| Test Case Design | 1 day | ✅ Complete |  
+| Test Execution | 1 day | ✅ Complete |  
+| Defect Logging | Ongoing | ✅ Logged 3 functional defects |  
+| Final Reporting | 0.5 day | ✅ Delivered |  
 
 ---
 
 ## 👩🏽‍💻 Roles & Responsibilities
 
-| Name          | Role                     |
-|---------------|--------------------------|
-| Nicole Nealy  | QA Analyst / Tester      |
+| Name | Role |  
+|------|------|  
+| Nicole Nealy | QA Analyst – Test design, execution, defect reporting |  
 
 ---
 
-## 🔍 Entry & Exit Criteria
+🔍 Entry & Exit Criteria  
+**Entry**  
+- OrangeHRM demo site accessible.  
+- Functional flow validated via exploratory smoke tests.  
+- Test cases authored and reviewed.  
 
-**Entry Criteria:**
-- OrangeHRM demo site is accessible
-- Functional flow is confirmed through exploratory testing
-- Test cases are reviewed
+**Exit**  
+- All high-priority test cases executed.  
+- All critical defects logged and retested.  
+- Test summary and RTM finalized.  
 
-**Exit Criteria:**
-- All high-priority test cases executed
-- All critical defects logged and retested
-- Final test summary completed
+🛠️ Tools & Tracking  
+- **Test Design/Execution**: Qase (cases, test runs, logs)  
+- **Defect Tracking**: Qase defect log + exports  
+- **Reporting**: Qase exports (PDF/XLSX)  
+- **Screenshots**: Captured at runtime, linked to defects  
 
----
+✅ Deliverables (Evidence)  
+- **Test Cases**: `test-cases-qase.xlsx` (full coverage set)  
+- **Execution Log**: `execution-log-qase.pdf` (pass/fail record)  
+- **Defects**: `defect-report-qase.pdf` (3 logged issues: self-as-contact, blank name, emoji rendering)  
+- **RTM**: `rtm.xlsx` (requirements mapped to cases + defects)  
+- **Screenshots**: `/screenshots/` (visual proof of flows + bugs)  
+- **README.md**: Case-study summary (scope, risks, results)  
+- **This Test Plan**: Formal documentation of QA approach  
 
-## 🛠️ Tools Used
-
-- Test Case Management: Qase (test design, organization, and test suite structure)
-- Test Execution: Qase (manual execution with step-level tracking and result logging)
-- Defect Tracking: Qase (linked to failed test cases and exported for reporting)
-- Reporting & Traceability: Qase exports (PDF/XLSX for test cases, execution logs, defects)
-- Screenshots: Captured during test execution and stored in `screenshots/` folder
-
----
-
-## ✅ Deliverables
-
-- `test-cases-qase.pdf` – Export of all test cases from Qase
-- `execution-log-qase.pdf` – Test run summary with pass/fail results
-- `defect-report-qase.pdf` – Exported list of all logged defects
-- `traceability-matrix-qase.xlsx` – (optional) RTM generated or approximated via Qase case-defect links
-- `screenshots/` – Visual proof of execution steps and bugs
-- `README.md` – Summary of test objectives, coverage, and QA approach
-- `test-plan.md` – This file, detailing the structured QA process
+📊 Outcomes  
+- **Defects found**: 3 functional issues tied to employee creation/validation.  
+- **Impact**: Documented risks around input validation, user data integrity, and UI handling of special characters.  
+- **Next Step**: Recommend automation of login and employee-add flows in Selenium for regression stability.  
