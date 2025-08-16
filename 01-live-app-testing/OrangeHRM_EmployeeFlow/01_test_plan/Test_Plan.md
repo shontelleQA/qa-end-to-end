@@ -44,12 +44,12 @@ This test plan defines the QA approach for validating the Employee Flow in the O
 
 ## ⏱️ Timeline
 
-| Activity | Duration | Status |  
-|----------|----------|--------|  
-| Test Case Design | 1 day | ✅ Complete |  
-| Test Execution | 1 day | ✅ Complete |  
-| Defect Logging | Ongoing | ✅ Logged 3 functional defects |  
-| Final Reporting | 0.5 day | ✅ Delivered |  
+| Activity | Duration | Status                        |  
+|----------|----------|-------------------------------|  
+| Test Case Design | 1 day | ✅ Complete                    |  
+| Test Execution | 1 day | ✅ Complete                    |  
+| Defect Logging | Ongoing | ✅ Logged 2 functional defects |  
+| Final Reporting | 0.5 day | ✅ Delivered                   |  
 
 ---
 
