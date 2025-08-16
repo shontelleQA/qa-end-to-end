@@ -1,8 +1,8 @@
 # 🟠 OrangeHRM Employee Management Testing Project
 
-This project documents hands-on QA testing of the **Employee Management** workflow inside the [OrangeHRM Open Source Demo](https://opensource-demo.orangehrmlive.com/).
+This project demonstrates QA of the **Employee Management** workflow inside the [OrangeHRM Open Source Demo](https://opensource-demo.orangehrmlive.com/).
 
-It simulates a real sprint cycle — covering test planning, manual test case design, execution tracking, and defect reporting — using live application flows, real test data, and practical QA artifacts.
+It simulates a real sprint cycle including test planning, manual test case design, execution tracking, and defect reporting. All artifacts are preserved in this folder to show a complete QA workflow, from scope to outcomes.
 
 ---
 
@@ -10,14 +10,14 @@ It simulates a real sprint cycle — covering test planning, manual test case de
 
 ```bash
 01-live-app-testing/
-└── orangehrm_employeeflow/
-    ├── Test_Plan.md
-    ├── Test_Cases.xlsx
-    ├── Execution_Log.xlsx
-    ├── Defect_Reports.md
-    ├── RTM.xlsx
-    ├── screenshots/
-    └── README.md
+└── 01-orangehrm-employee-flow/
+    ├── test-plan/           # Test plan (scope, env, objectives, outcomes)
+    ├── test-cases/          # Test design (XLSX + PDF export)
+    ├── execution-logs/      # Test run results (XLSX + PDF export)
+    ├── defect-reports/      # Markdown write-ups + Qase export
+    ├── rtm/                 # Requirements Traceability Matrix
+    ├── screenshots/         # Evidence of execution + defects
+    └── README.md            # This case-study overview
 ```
 
 ---
@@ -25,12 +25,11 @@ It simulates a real sprint cycle — covering test planning, manual test case de
 ## 🎯 Scope of Testing
 
 - User login and logout flows
-- Adding a new employee (basic required fields + optional photo upload)
-- Searching for an employee in the directory
-- Editing employee details
-- Form validation (error handling on required fields)
+- Adding a new employee (valid + invalid data)- Searching for an employee in the directory
+- Employee record validation in admin list
+- Form-level and field-level error handling
 - Field reset/cancel functionality
-- Basic UI feedback (form resets, confirmation messages)
+- Basic cross-browser validation (Chrome + Firefox)
 
 ---
 
