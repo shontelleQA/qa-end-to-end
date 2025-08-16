@@ -52,12 +52,13 @@ It simulates a real sprint cycle including test planning, manual test case desig
 
 | Artifact | Description |
 |----------|-------------|
-| `Test_Plan.md` | Test scope, objectives, environment, risks, and strategy |
-| `Test_Cases.xlsx` | Full manual test case set (positive, negative, edge cases) |
-| `Execution_Log.xlsx` | Test run tracking and pass/fail status |
-| `Defect_Report.md` | Documented defects found during execution |
-| `RTM.xlsx` | Requirements mapped to corresponding test cases |
-| `screenshots/` | Visual evidence of tests and defects |
+| [Test Plan](test-plan/Test_Plan.md) | Test scope, objectives, environment, risks, and strategy |
+| [Test Cases (xlsx)](test-cases/test-cases-qase.xlsx) | Full manual test case set (positive, negative, edge cases) |
+| [Execution Log (pdf)](execution-logs/execution-log-qase.pdf) | Test run tracking and pass/fail status |
+| [Defect Report (xlsx)](defect-reports/defect-report-qase.xlsx) | Documented defects found during execution |
+| [RTM (xlsx)](rtm/rtm.xlsx) | Requirements mapped to corresponding test cases |
+| [Screenshots](screenshots/) | Visual evidence of tests and defects |
+
 
 ---
 
