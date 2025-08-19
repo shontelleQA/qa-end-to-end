@@ -1,131 +1,124 @@
-# 🧪 Test Plan – GoRest API Manual + Automation Testing
+# 🧪 Test Plan — GoRest API (Users) — Manual + Starter Automation
 
 ---
 
-## 📋 Project Overview
-
-This project covers both manual and automated testing of the public GoRest API, focused on validating the `/users` endpoint. It simulates real-world backend QA responsibilities — including CRUD validation, negative testing, authorization, defect documentation, and light automation using Python.
+## 📋 Overview
+End-to-end validation of the public GoRest **Users** service covering Create/Read/Update/Delete (CRUD), authorization behavior, field/data validation, and light contract and pagination checks. Executed manually in Postman and tracked in Qase; Phase-1 automation in Python (`requests`) for a few high-signal tests.
 
 ---
 
 ## 🎯 Objectives
-
-- Verify the correct behavior of Create, Read, Update, and Delete operations on the `/users` endpoint.
-- Validate status codes and response content across positive and negative scenarios.
-- Test bearer token authentication enforcement (valid, missing, invalid).
-- Document and execute manual test cases using Postman and Qase.
-- Write starter automation scripts in Python to demonstrate API test scripting.
-
----
-
-## 🛠️ Tools and Technologies
-
-| Tool | Purpose |
-|------|---------|
-| **Postman** | Manual API test execution |
-| **Qase** | Test management, execution tracking, and defect logging |
-| **Python 3.x** | Automation scripting language |
-| **Requests library** | Send API calls in Python |
-| **VS Code** | Code editor and project management |
-| **GitHub** | Version control and public documentation |
-| **Windows 11** | Local test environment |
-| **GoRest API** | Application under test (public RESTful service) |
+- Validate CRUD for `/users`.
+- Exercise authorization paths: valid, missing, invalid, and expired/revoked (sim).
+- Confirm data validation: required fields, email format, uniqueness, enum fields.
+- Add reliability signals: minimal JSON schema (contract) checks and pagination sanity.
+- Provide reproducible artifacts + runnable starter automation.
 
 ---
 
-## 🔍 Scope of Testing
-
-| In Scope | Out of Scope |
-|----------|--------------|
-| `/users` endpoint (CRUD) | Other endpoints like `/posts`, `/comments` |
-| Token-based auth (positive/negative) | Rate limiting, throttling behavior |
-| JSON response validation | GraphQL schema testing |
-
----
-
-## 📂 Test Artifacts
-
-| Artifact | Description |
-|----------|-------------|
-| `create-user-tests.md` | Manual test cases for POST `/users` |
-| `update-user-tests.md` | Manual test cases for PATCH and DELETE `/users/{id}` |
-| `execution-log-qase.xlsx` | Qase export of execution results |
-| `gorest-env.json` | Postman environment file (token and base URL) |
-| `gorest-user-tests.postman_collection.json` | Postman collection used in execution |
-| `defect-log.md` | Simulated defects with expected vs. actual outcomes |
-| `README.md` | Project summary and usage overview |
-| `automation-ideas.md` | Prioritized automation plan and stack planning |
-| `03-test-automation/` | Live automation scripts written in Python |
+## 🛠️ Tools
+| Area              | Tool                                |
+|-------------------|-------------------------------------|
+| Manual execution  | Postman (collections, env, runner)  |
+| Test management   | Qase.io                             |
+| Automation        | Python 3.x + `requests` (Pytest planned) |
+| Repo/docs         | GitHub + Markdown                   |
+| OS                | Windows 11                          |
+| AUT               | `https://gorest.co.in/public/v2`    |
 
 ---
 
-## 🔐 Authentication Setup
+## 🔍 Scope
+| In Scope                                    | Out of Scope                           |
+|---------------------------------------------|-----------------------------------------|
+| `/users` CRUD                               | Other endpoints (`/posts`, `/comments`) |
+| Auth (valid/missing/invalid/expired sim)    | Full security pen-testing               |
+| Data validation (required/format/enum)      | Perf/load beyond light rate-limit probe |
+| Contract (JSON schema), Pagination sanity   | Full contract suite across all resources |
 
-- **Token Type:** Bearer Token (manually generated)
-- **Stored in Postman Environment Variable:** `{{token}}`
-- Required for: `POST`, `PATCH`, `DELETE` operations
+---
+
+## 🔐 Environment & Auth
+- **Base URL:** `https://gorest.co.in/public/v2`
+- **Token:** Bearer, stored as `{{token}}` in Postman env.
+- **Vars:** `{{baseUrl}}`, `{{token}}`, `{{userId}}` (captured on create).
+- **Expired token** is simulated by using an intentionally revoked/garbage token and documenting the expected 401/403 behavior.
 
 ---
 
 ## 🧪 Test Types
+| Type          | Examples |
+|---------------|----------|
+| Functional    | Create, Get by ID, Update, Delete |
+| Negative      | Missing fields, invalid email, duplicate email, invalid enums |
+| Authorization | Valid, missing, invalid, expired (sim) |
+| Contract      | Validate response shape for Create + Get by ID with JSON schema |
+| Reliability   | Idempotency (duplicate create), Pagination sanity |
 
-| Type | Description |
-|------|-------------|
-| Functional | Positive user creation and updates |
-| Negative | Missing fields, invalid formats |
-| Authorization | Invalid or missing tokens |
-| Automated | Light scripting of selected manual tests in Python |
+---
+
+## 📂 Test Artifacts
+- **Test Cases:** `./test-cases/`  
+  - `create-user-tests.md`  
+  - `update-user-tests.md`  
+  - `auth-edge-case-tests.md`  
+  - `idempotency-tests.md`  
+  - `pagination-tests.md`  
+
+- **Postman:** `./postman/`  
+  - `gorest-user-tests.postman_collection.json`  
+  - `gorest-env.json`  
+  - `schemas/user.create.response.schema.json`  
+  - `schemas/user.get.response.schema.json`  
+  - *(optional)* run report / screenshots  
+
+- **Defects:** `./defects/README.md`  
+- **Automation Notes:** `./automation-notes/README.md`  
+- **Python Tests:** `./python-tests/` (Phase-1 scripts)  
+- **Execution Logs:** Qase export in `./postman/` or `./defects/`  
 
 ---
 
 ## ✅ Entry Criteria
-
-- Postman setup completed with token and base URL
-- Test cases written and reviewed in Qase
-- Postman requests verified against test case steps
+- Postman env configured (`{{baseUrl}}`, `{{token}}`).  
+- Seed data approach defined (unique emails via timestamp).  
+- Test cases reviewed and linked to collection requests.  
 
 ---
 
 ## 🛑 Exit Criteria
-
-- Manual test cases executed and logged
-- Simulated defects documented
-- Automation scripts verified for core workflows
-- All artifacts committed to GitHub in organized folders
+- Manual cases executed with results in Qase.  
+- High-signal checks executed (contract, pagination, idempotency).  
+- Phase-1 automation runs locally and passes.  
+- Artifacts committed with working links.  
 
 ---
 
 ## ⚙️ Automation Overview
+- **Current scripts:**  
+  - `test_create_user.py` → 201 create, capture `id`, verify via GET  
+  - `test_negative_create_user.py` → 422 missing email  
+  - `test_auth_invalid_token.py` → 401 invalid token  
 
-Three scripts were created using Python and the `requests` library to demonstrate basic automation:
-
-| Script | What it Tests |
-|--------|----------------|
-| `test_create_user.py` | Positive test: Create user with valid data (201 Created) |
-| `test_negative_create_user.py` | Negative test: Missing email triggers 422 Validation Error |
-| `test_auth_invalid_token.py` | Auth test: Invalid token returns 401 Unauthorized |
-
-Future enhancements include using Pytest for better structure and scaling.
-
----
-
-## 📅 Timeline
-
-| Phase | Date |
-|-------|------|
-| Manual Test Design | April 2025 |
-| Manual Execution | April 2025 |
-| Automation Scripting | April 2025 |
-| Final Documentation & Commit | April 2025 |
+- **Next automation:**  
+  - Add Pytest structure + markers (`smoke`, `auth`, `neg`, `contract`, `paging`)  
+  - Automate idempotency + pagination checks  
+  - Add schema validation with `jsonschema`  
 
 ---
 
-## 📁 Repository
-
-All artifacts are publicly available in this GitHub repository:
-
-📁 View the full project here →  
-👉 [GoRest API Manual + Automation Project](https://github.com/shontelleQA/qa-portfolio-shontelle-nicole/tree/main/02-api-testing/gorest-api)
-
+## 🗓️ Timeline
+- Manual design & execution: April 2025  
+- Phase-1 automation (basic Python): April 2025  
+- Systems-assurance expansion (manual + planned automation): August 2025  
+- Pytest + CI integration: September 2025  
 
 ---
+
+## 🔗 Repository
+This folder: `02-gorest-api-testing/`
+
+---
+
+## 💡 Notes for Reviewers
+This project uses a public demo API. Some defects are **simulated for demonstration**. Contract checks are intentionally minimal to keep the project recruiter-readable.
