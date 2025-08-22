@@ -58,12 +58,13 @@ End-to-end validation of the public GoRest **Users** service covering Create/Rea
 ---
 
 ## 📂 Test Artifacts
-- **Test Cases:** `./test-cases/`  
-  - `create-user-tests.md`  
-  - `update-user-tests.md`  
-  - `auth-edge-case-tests.md`  
-  - `idempotency-tests.md`  
-  - `pagination-tests.md`  
+- **Test Cases:** [test_cases/](../02_test_cases/)  
+  - [create_user_tests.md](../02_test_cases/create_user_tests.md)  
+  - [update_user_tests.md](../02_test_cases/update_user_tests.md)  
+  - [auth_edge_case_tests.md](../02_test_cases/04_auth_edge_case_tests.md)  
+  - [data_validation_tests.md](../02_test_cases/05_data_validation_tests.md)  
+  - [idempotency_tests.md](../02_test_cases/06_idempotency_tests.md)  
+  - [pagination_tests.md](../02_test_cases/07_pagination_tests.md)  
 
 - **Postman:** `./postman/`  
   - `gorest-user-tests.postman_collection.json`  
