@@ -32,4 +32,4 @@ System allows the save and displays the user as their own emergency contact.
 
 ## 📸 Screenshot
 
-![alt text](../Screenshots/OE4-self-step-4.png)
+![alt text](../06_screenshots/OE4-self-step-4.png)

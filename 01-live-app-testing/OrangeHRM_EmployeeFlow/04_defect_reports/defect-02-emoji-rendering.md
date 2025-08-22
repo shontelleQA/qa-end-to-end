@@ -35,4 +35,4 @@ Emoji is replaced by `??` in the saved record. User receives no feedback that th
 
 ## 📸 Screenshot
 
-![C:\Users\sunch\Projects\qa-portfolio-shontelle-nicole\01-live-app-testing\OrangeHRM_EmployeeFlow\Screenshots\OE5-emojiname-step-3.png](../Screenshots/OE5-emojiname-step-3.png)
+![Emoji Name Screenshot](../06_screenshots/OE5-emojiname-step-3.png)
