@@ -61,12 +61,12 @@
 ## 📂 Evidence
 | Artifact | Link |
 |----------|------|
-| Test Plan | [00_test_plan/README.md](../00_test_plan/README.md) |
-| Postman (collection, env, run report) | [01_postman_collections/](../01_postman_collections/) |
-| Manual Test Cases | [02_test_cases/](../02_test_cases/) |
-| Defect Reports (simulated) | [03_defects/README.md](../03_defects/README.md) |
-| Automation Notes | [04_automation_notes/README.md](../04_automation_notes/README.md) |
-| Python Tests (Phase 1) | [05_python_tests/](../05_python_tests/) |
+| Test Plan | [00_test_plan/](00_test_plan/) |
+| Postman (collection, env, run report) | [01_postman_collections/](01_postman_collections/) |
+| Manual Test Cases | [02_test_cases/](02_test_cases/) |
+| Defect Reports (simulated) | [03_defects/](03_defects/) |
+| Automation Notes | [04_automation_notes/](04_automation_notes/) |
+| Python Tests (Phase 1) | [05_python_tests/](05_python_tests/) |
    |
 
 ---
