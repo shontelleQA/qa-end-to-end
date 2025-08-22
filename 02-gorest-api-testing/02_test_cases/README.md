@@ -35,13 +35,12 @@ Each test case includes:
 
 | File | Description |
 |------|-------------|
-| [create-user-tests.md](./create-user-tests.md) | Tests for `POST /users`, `GET /users`, and negative creation scenarios |
-| [update-user-tests.md](./update-user-tests.md) | Tests for `PATCH /users/{id}`, `DELETE /users/{id}`, and negative updates on deleted users |
-| [auth_edge_case_tests.md](./04_auth_edge_case_tests.md) | Token-related negative tests — missing token, invalid/expired token |
-| [data_validation_tests.md](./05_data_validation_tests.md) | Field validation for `gender` and `status` enums |
-| [idempotency_tests.md](./06_idempotency_tests.md) | Duplicate create-user requests to validate unique email enforcement |
-| [pagination_tests.md](./07_pagination_tests.md) | Pagination checks across multiple pages to confirm distinct user sets |
-
+| [02_create_user_tests.md](./02_create_user_tests.md) | Tests for `POST /users`, `GET /users`, and negative creation scenarios |
+| [03_update_user_tests.md](./03_update_user_tests.md) | Tests for `PATCH /users/{id}`, `DELETE /users/{id}`, and negative updates on deleted users |
+| [04_auth_edge_case_tests.md](./04_auth_edge_case_tests.md) | Token-related negative tests — missing token, invalid/expired token |
+| [05_data_validation_tests.md](./05_data_validation_tests.md) | Field validation for `gender` and `status` enums |
+| [06_idempotency_tests.md](./06_idempotency_tests.md) | Duplicate create-user requests to validate unique email enforcement |
+| [07_pagination_tests.md](./07_pagination_tests.md) | Pagination checks across multiple pages to confirm distinct user sets |
 ---
 
 ## 💡 Future Automation Notes
