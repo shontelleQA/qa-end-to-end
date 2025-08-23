@@ -1,3 +1,11 @@
 # 🗂️ Postman Collections
 
 This folder contains the Postman collections and environment files used to test the GoRest API, along with execution reports.
+
+- `gorest-crud-collection.json` — requests + Tests tab (schema checks, userId capture)
+- `gorest-env.example.json` — example environment (token = "REPLACE_ME")
+- `schemas/` — JSON Schemas used for contract checks in Tests tab
+- `run-reports/` — exported run reports (PDF/HTML)
+- `run-screenshots/` — screenshots of passed tests/responses
+- `data/` (optional) — CSVs for Runner
+- `tests-snippets/` (optional) — reusable Postman test code
