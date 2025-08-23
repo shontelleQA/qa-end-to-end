@@ -51,7 +51,7 @@ It simulates a real sprint cycle including test planning, manual test case desig
 ## 📂 Project Artifacts
 | Artifact | Description |
 |----------|-------------|
-| [Test Plan](./01_test_plan/Test_Plan.md) | Test scope, objectives, environment, risks, and strategy |
+| [Test Plan](01_test_plan/README.md) | Test scope, objectives, environment, risks, and strategy |
 | [Test Cases](./02_test_cases/) | Full manual test case set (positive, negative, edge cases) |
 | [Execution Logs](./03_execution_logs/) | Test run tracking and pass/fail status |
 | [Defect Reports](./04_defect_reports/) | Documented defects found during execution |
