@@ -72,10 +72,11 @@
 ---
 
 ## 📊 Outcomes
-- **Auth validated:** 401 for invalid/missing tokens; simulated expired token documented.  
-- **Data validation enforced:** 422 for missing/invalid/duplicate email.  
-- **Reliability:** basic contract assertions and pagination sanity checks added.  
-- **Automation:** Phase 1 Python scripts cover Create, Negative Create, and Invalid Token; structure ready for Pytest markers.  
+- **Auth validated** → Confirmed only valid tokens can access resources, reducing risk of unauthorized data exposure.  
+- **Data validation enforced** → API rejects malformed/duplicate emails (422), preventing downstream data corruption and ensuring reliable user records.  
+- **Reliability checks added** → Contract and pagination sanity tests provide early warning for schema drift or query inconsistencies, boosting system resilience.  
+- **Phase 1 automation delivered** → Python scripts now cover key flows; the structure is ready to scale into Pytest + CI/CD for faster regression feedback.  
+  
 
 ---
 
@@ -92,7 +93,7 @@
 |--------------------------|---------------------------|
 | Sr App Dev Eng (SDET)   | Negative tests, auth edges, contract checks, automation structure |
 | IAM Analyst             | Token handling, missing/invalid/expired cases, error exposure review |
-| Data Validation         | Field constraints (email), deterministic IDs, pagination consistency |
+| Data Validation (QA ↔ Data) | Field constraints (email), deterministic IDs, pagination consistency → mirrors the same validation mindset used in data analyst roles (spotting anomalies, ensuring integrity). |
 | Governance/Process      | Clear plan → cases → evidence → outcomes; defects documented and reproducible |
 
 ---
