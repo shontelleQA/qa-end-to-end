@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"QA Test User Valid\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"qatestuser_valid001@example.com\",\r\n  \"status\": \"active\"\r\n}\r\n",
+					"raw": "{\r\n  \"name\": \"QA Test User Valid\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"{{fixedEmail}}\\",\r\n  \"status\": \"active\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -258,7 +258,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Duplicate Email User\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"qatestuser_valid001@example.com\",\r\n  \"status\": \"active\"\r\n}\r\n",
+					"raw": "{\r\n  \"name\": \"Duplicate Email User\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"{{fixedEmail}}\\",\r\n  \"status\": \"active\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
