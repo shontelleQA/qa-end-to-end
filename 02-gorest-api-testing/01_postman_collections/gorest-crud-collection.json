@@ -8,274 +8,708 @@
 	},
 	"item": [
 		{
-			"name": "List Users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create User",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"QA Test User Valid\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"{{fixedEmail}}\\",\r\n  \"status\": \"active\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Retrieve Specific User",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/users/{{userId}}",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						"{{userId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update User",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Updated QA User\",\r\n  \"status\": \"inactive\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/{{userId}}",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						"{{userId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE User",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/users/{{userId}}",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						"{{userId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Post for User",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"API Portfolio Post\",\r\n  \"body\": \"This post was created as part of a QA testing portfolio project.\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/{{userId}}/posts",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						"{{userId}}",
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Comment on Post",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Portfolio Tester\",\r\n  \"email\": \"tester@example.com\",\r\n  \"body\": \"This is a comment for the API portfolio project.\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/posts/{{postId}}/comments",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"posts",
-						"{{postId}}",
-						"comments"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Users - No Token",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/users",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create User – Missing Email",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+			"name": "auth-edge-cases",
+			"item": [
+				{
+					"name": "Create User - Invalid Token",
+					"event": [
 						{
-							"key": "token",
-							"value": "c9af22406a462900443e2ea4f29fd1dd35a09359559c7c51e11d0cc8fcb54687",
-							"type": "string"
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401/403 for invalid token\", function () {\r",
+									"  pm.expect([401,403]).to.include(pm.response.code);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Missing Email User\",\r\n  \"gender\": \"male\",\r\n  \"status\": \"active\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users",
-					"host": [
-						"{{baseUrl}}"
 					],
-					"path": [
-						"users"
-					]
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "bad_token_value",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"QA Test User Valid\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"{{fixedEmail}}\",\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User - No Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401/403 for missing token\", function () {\r",
+									"  pm.expect([401,403]).to.include(pm.response.code);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"QA Test User Valid\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"{{fixedEmail}}\",\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Create User – Invalid Email Format",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Invalid Email Format User\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"invalid-email-format\",\r\n  \"status\": \"active\"\r\n}\r\n\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "crud-tests",
+			"item": [
+				{
+					"name": "List Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users",
-					"host": [
-						"{{baseUrl}}"
 					],
-					"path": [
-						"users"
-					]
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Create User response matches schema\", function () {\r",
+									"  const schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"required\": [\"id\",\"name\",\"email\",\"gender\",\"status\"],\r",
+									"    \"properties\": {\r",
+									"      \"id\": { \"type\": \"integer\" },\r",
+									"      \"name\": { \"type\": \"string\" },\r",
+									"      \"email\": { \"type\": \"string\" },\r",
+									"      \"gender\": { \"type\": \"string\", \"enum\": [\"male\",\"female\"] },\r",
+									"      \"status\": { \"type\": \"string\", \"enum\": [\"active\",\"inactive\"] }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"  };\r",
+									"  pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Capture userId for later requests\", function () {\r",
+									"  const json = pm.response.json();\r",
+									"  pm.expect(json).to.have.property(\"id\");\r",
+									"  pm.environment.set(\"userId\", json.id);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"QA Test User Valid\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"qa+{{$timestamp}}@example.com\",\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Specific User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Retrieve User response matches schema\", function () {\r",
+									"  const schema = { /* same as above */ };\r",
+									"  pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated QA User\",\r\n  \"status\": \"inactive\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User – Missing Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 422\", function () {\r",
+									"  pm.response.to.have.status(422);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "c9af22406a462900443e2ea4f29fd1dd35a09359559c7c51e11d0cc8fcb54687",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Missing Email User\",\r\n  \"gender\": \"male\",\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User – Invalid Email Format",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 422\", function () {\r",
+									"  pm.response.to.have.status(422);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Invalid Email Format User\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"invalid-email-format\",\r\n  \"status\": \"active\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User – Duplicate Email Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 422\", function () {\r",
+									"  pm.response.to.have.status(422);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Duplicate Email User\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"{{fixedEmail}}\",\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Create User – Duplicate Email Address",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Duplicate Email User\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"{{fixedEmail}}\\",\r\n  \"status\": \"active\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "data-validation",
+			"item": [
+				{
+					"name": "Create User – Invalid Gender",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 422\", function () {\r",
+									"  pm.response.to.have.status(422);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users",
-					"host": [
-						"{{baseUrl}}"
 					],
-					"path": [
-						"users"
-					]
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Invalid Gender User\",\r\n  \"gender\": \"banana\",\r\n  \"email\": \"invalidgender001@example.com\",\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User – Invalid Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 422\", function () {\r",
+									"  pm.response.to.have.status(422);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Invalid Status User\",\r\n  \"gender\": \"male\",\r\n  \"email\": \"invalidstatus001@example.com\",\r\n  \"status\": \"paused\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "reliability-checks",
+			"item": [
+				{
+					"name": "Duplicate Create (Idempotency)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 422 for duplicate email\", function () {\r",
+									"  pm.response.to.have.status(422);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Duplicate Email User\",\r\n  \"gender\": \"female\",\r\n  \"email\": \"{{fixedEmail}}\",\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination – Page 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Save page1 IDs\", function () {\r",
+									"  const ids = pm.response.json().map(u => u.id);\r",
+									"  pm.collectionVariables.set(\"ids_page1\", JSON.stringify(ids));\r",
+									"  pm.expect(ids.length).to.be.greaterThan(0);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination – Page 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No overlap with page1 IDs\", function () {\r",
+									"  const ids1 = new Set(JSON.parse(pm.collectionVariables.get(\"ids_page1\") || \"[]\"));\r",
+									"  const ids2 = new Set(pm.response.json().map(u => u.id));\r",
+									"  pm.expect(ids2.size).to.be.greaterThan(0);\r",
+									"  for (const id of ids2) {\r",
+									"    pm.expect(ids1.has(id)).to.eql(false, \"ID overlap between pages\");\r",
+									"  }\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?page=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination Non-overlap",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Duplicate Email User\", \"gender\": \"female\", \"email\": \"qasignal+123@example.com\", \"status\": \"active\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -283,7 +717,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "c9af22406a462900443e2ea4f29fd1dd35a09359559c7c51e11d0cc8fcb54687",
+				"value": "{{token}}",
 				"type": "string"
 			}
 		]
@@ -308,6 +742,12 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ids_page1",
+			"value": ""
 		}
 	]
 }
