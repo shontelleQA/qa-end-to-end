@@ -1,6 +1,6 @@
 # 🧪 GoRest API – Systems-Assurance Case Study (Users Service)
 
-**Scope:** Validate Users CRUD and authorization for a public REST API, covering happy paths, error handling, and minimal contract/pagination checks. Executed in Postman with Phase 1 Python automation.
+**Scope:** Validate Users CRUD and authorization for a public REST API, covering happy paths, error handling, data validation, idempotency, and contract/pagination checks. Executed in Postman with Phase 1 Python automation.
 
 ---
 
@@ -48,7 +48,8 @@
 
 **Negative & Auth:**  
 - Missing required fields (email) → 422 with field message.  
-- Invalid email format / duplicate email → 422.  
+- Invalid email format / duplicate email → 422. 
+- Invalid gender/status values → 422 (API lenient in some cases, noted in run). 
 - Invalid token → 401; Missing token → 401; Expired token (sim) → 401/403.  
 
 **Reliability checks (lightweight):**  
@@ -76,6 +77,8 @@
 - **Data validation enforced** → API rejects malformed/duplicate emails (422), preventing downstream data corruption and ensuring reliable user records.  
 - **Reliability checks added** → Contract and pagination sanity tests provide early warning for schema drift or query inconsistencies, boosting system resilience.  
 - **Phase 1 automation delivered** → Python scripts now cover key flows; the structure is ready to scale into Pytest + CI/CD for faster regression feedback.  
+- **Reliability checks added** → Contract and pagination sanity tests provide early warning for schema drift or query inconsistencies, boosting system resilience.  
+   - Pagination defect observed: duplicate IDs appeared between page 1 & 2 in one run → logged in [03_defects/](...) 
   
 
 ---
