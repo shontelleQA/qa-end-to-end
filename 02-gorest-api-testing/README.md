@@ -75,10 +75,10 @@
 ## 📊 Outcomes
 - **Auth validated** → Confirmed only valid tokens can access resources, reducing risk of unauthorized data exposure.  
 - **Data validation enforced** → API rejects malformed/duplicate emails (422), preventing downstream data corruption and ensuring reliable user records.  
-- **Reliability checks added** → Contract and pagination sanity tests provide early warning for schema drift or query inconsistencies, boosting system resilience.  
+- **Reliability checks added** → Contract and pagination sanity tests provide early warning for schema drift or query inconsistencies, boosting system resilience.
+- - Pagination defect observed: duplicate IDs appeared between page 1 & 2 in one run → logged in [03_defects/](03_defects/) 
 - **Phase 1 automation delivered** → Python scripts now cover key flows; the structure is ready to scale into Pytest + CI/CD for faster regression feedback.  
-- **Reliability checks added** → Contract and pagination sanity tests provide early warning for schema drift or query inconsistencies, boosting system resilience.  
-   - Pagination defect observed: duplicate IDs appeared between page 1 & 2 in one run → logged in [03_defects/](...) 
+   
   
 
 ---
