@@ -36,3 +36,17 @@
 
 ---
 
+## Defect 003 – Pagination Returns Duplicate User IDs
+
+| Field         | Value |
+|---------------|-------|
+| Feature       | User Retrieval (GET /users?page=) |
+| Environment   | GoRest Public API v2 |
+| Reported By   | Shontelle Nicole |
+| Severity      | Major |
+| Priority      | High |
+| Description   | Duplicate user IDs were observed between page 1 and page 2 results, indicating unreliable pagination. |
+| Steps to Reproduce | 1. Send `GET /users?page=1` with a valid token. <br> 2. Send `GET /users?page=2`. <br> 3. Compare the returned user IDs between the two responses. |
+| Expected Result | Page 1 and Page 2 should return distinct sets of user records with no overlap. |
+| Actual Result   | Some user IDs appeared in both Page 1 and Page 2 responses. |
+| Status          | Open |
