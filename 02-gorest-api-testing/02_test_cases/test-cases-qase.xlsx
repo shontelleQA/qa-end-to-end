@@ -1,0 +1,183 @@
+case_id,title,suite,suite_id,assignee,time_spent_ms,status,finish_time,steps,steps_input_data,steps_expected_result,steps_status,steps_comments,comment,stacktrace,priority,severity,automation,type,tags,is_muted,case_parameter
+9,"AE-1 — Missing Token – Create User Request","Auth Edges",2,"Nicole Nealy",448757,Passed,"2025-09-07 19:57:40","1. Create POST request to `{{baseUrl}}/users`
+2. Remove Authorization header
+3. | Send the request |
+| ---------------- |
+|
+
+|  |
+| --- |
+|
+4. Observe the response
+","1. JSON body with required fields: `{""name"": ""Unauthorized User"", ""gender"": ""male"", ""email"": ""unauthuser001@example.com"", ""status"": ""active""}`
+2. 
+3. 
+4. 
+","1. Request body is valid
+2. Request contains no Authorization header
+3. API responds
+4. Status = 401 Unauthorized (or 403). Response body includes error message about missing authentication
+","1. Passed
+2. Passed
+3. Passed
+4. Passed
+","1. Request body is valid
+2. Request contains no Authorization header
+3. API responds
+4. Status = 401 Unauthorized (or 403). Response body includes error message about missing authentication",,,High,Major,"To be automated",Security,,false,
+10,"AE-2 — Invalid/Expired Token – Create User Request","Auth Edges",2,"Nicole Nealy",174595,Passed,"2025-09-07 20:01:13","1. Create POST request to `{{baseUrl}}/users`
+2. Set Authorization header with invalid token
+3. Send the request
+4. Observe the response
+","1. JSON body with required fields: `{""name"": ""Expired Token User"", ""gender"": ""female"", ""email"": ""expiredtoken001@example.com"", ""status"": ""inactive""}`
+2. Authorization: Bearer bad\_token
+3. 
+4. 
+","1. Request body is valid
+2. Header is applied to request
+3. API responds
+4. Status = 401 Unauthorized or 403 Forbidden. Response body includes error message about invalid/expired token
+","1. Passed
+2. Passed
+3. Passed
+4. Passed
+","1. Request body is valid
+2. Header is applied to request
+3. API responds
+4. Status = 401 Unauthorized",,,High,Major,"To be automated",Security,,false,
+11,"DV-1 — Create User with Invalid Gender Value","Data Validation",3,"Nicole Nealy",155944,Passed,"2025-09-07 20:03:49","1. Create POST request to `{{baseUrl}}/users`
+2. Add Authorization header
+3. Send the request
+4. Observe the response
+","1. JSON body: `{""name"": ""Invalid Gender User"", ""gender"": ""banana"", ""email"": ""invalidgender001@example.com"", ""status"": ""active""}`
+2. Authorization: Bearer {{token}}
+3. 
+4. 
+","1. Request body is valid but includes invalid `gender`
+2. Token is applied to request
+3. API responds
+4. Status = 422 Unprocessable Entity. Response body includes error about invalid gender
+","1. Passed
+2. Passed
+3. Passed
+4. Passed
+","1. Request body is valid but includes invalid `gender`
+2. Token is applied to request
+3. API responds
+4. Status = 422 Unprocessable Entity. Response body includes error about invalid gender",,,Medium,Major,Manual,Functional,,false,
+12,"DV-2 — Create User with Invalid Status Value","Data Validation",3,"Nicole Nealy",94053,Passed,"2025-09-07 20:05:24","1. Create POST request to `{{baseUrl}}/users`
+2. Add Authorization header
+3. Send the request
+4. Observe the response
+","1. JSON body: `{""name"": ""Invalid Status User"", ""gender"": ""male"", ""email"": ""invalidstatus001@example.com"", ""status"": ""paused""}`
+2. Authorization: Bearer {{token}}
+3. 
+4. 
+","1. Request body is valid but includes invalid `status`
+2. Token is applied to request
+3. API responds
+4. Status = 422 Unprocessable Entity. Response body includes error about invalid status
+","1. Passed
+2. Passed
+3. Passed
+4. Passed
+","1. Request body is valid but includes invalid `status`
+2. Token is applied to request
+3. API responds
+4. Status = 422 Unprocessable Entity. Response body includes error about invalid status",,,Medium,Major,Manual,Functional,,false,
+13,"RL-1 — Duplicate Create (Idempotency) returns 422",Reliability,4,"Nicole Nealy",56000,Failed,"2025-09-07 20:08:59","1. Create POST request to `{{baseUrl}}/users`
+2. Add Authorization header
+3. Send the first request
+4. Resend the exact same request
+","1. JSON body with unique email: `{""name"": ""Duplicate Email User"", ""gender"": ""female"", ""email"": ""qasignal+123@example.com"", ""status"": ""active""}`
+2. Authorization: Bearer {{token}}
+3. 
+4. 
+","1. Request body valid
+2. Token applied
+3. Response = 201 Created, response body contains new user ID
+4. Response = 422 Unprocessable Entity, error “email has already been taken”
+","1. Passed
+2. Passed
+3. Failed
+4. Untested
+","1. Request body valid
+2. Token applied
+3. * Response = **422 Unprocessable Entity**
+* Error message: `""email has already been taken""`
+4. ","<p>error message as follows<br />
+        &quot;field&quot;: &quot;email&quot;,<br />
+        &quot;message&quot;: &quot;has already been taken&quot;</p>",,High,Major,Manual,Functional,,false,
+15,"RL-2 — Retrieve Page 1 of Users",Reliability,4,"Nicole Nealy",97589,Passed,"2025-09-07 23:35:55","1. **Send GET request to** `{{baseUrl}}/users?page=1`
+","1. * Headers: `Authorization: Bearer {{token}}`
+* Preconditions met.
+","1. * Response = `200 OK`.
+* Response body contains a non-empty array of user objects.
+* Each object includes `id`, `name`, `email`, `gender`, `status`.
+","1. Passed
+","1. * Response = `200 OK`.
+* Response body contains a non-empty array of user objects.
+* Each object includes `id`, `name`, `email`, `gender`, `status`.",,,Medium,Minor,Manual,Functional,,false,
+16,"RL-3 — Retrieve Page 2 of Users",Reliability,4,"Nicole Nealy",79111,Passed,"2025-09-07 23:37:22","1. **Send GET request to** `{{baseUrl}}/users?page=2`
+","1. * Headers: `Authorization: Bearer {{token}}`
+* Preconditions met.
+","1. * Response = `200 OK`.
+* Response body contains a non-empty array of user objects.
+* Data should be distinct from page 1 results.
+","1. Passed
+","1. * Response = `200 OK`.
+* Response body contains a non-empty array of user objects.
+* Data should be distinct from page 1 results.",,,Medium,Minor,Manual,Functional,,false,
+14,"RL-4 — Pagination Non-overlap between Page 1 & 2",Reliability,4,"Nicole Nealy",445194,Skipped,"2025-09-07 20:22:52","1. Create POST request to `{{baseUrl}}/users`
+2. Add Authorization header
+3. Send the first request
+4. Resend the exact same request
+","1. JSON body with unique email: `{""name"": ""Duplicate Email User"", ""gender"": ""female"", ""email"": ""qasignal+123@example.com"", ""status"": ""active""}`
+2. Authorization: Bearer {{token}}
+3. 
+4. Same JSON payload as Step 1
+","1. Request body valid
+2. Token applied
+3. Response = 201 Created, response body contains new user ID
+4. Response = 422 Unprocessable Entity, error “email has already been taken”
+","1. Passed
+2. Passed
+3. Passed
+4. Passed
+","1. Request body valid
+2. Token applied
+3. Response = 201 Created, response body contains new user ID
+4. Response = 422 Unprocessable Entity, error “email has already been taken”",,,High,Major,Manual,Functional,,false,
+14,"RL-4 — Pagination Non-overlap between Page 1 & 2",Reliability,4,"Nicole Nealy",0,Retest,"2025-09-07 23:38:34","1. Create POST request to `{{baseUrl}}/users`
+2. Add Authorization header
+3. Send the first request
+4. Resend the exact same request
+","1. JSON body with unique email: `{""name"": ""Duplicate Email User"", ""gender"": ""female"", ""email"": ""qasignal+123@example.com"", ""status"": ""active""}`
+2. Authorization: Bearer {{token}}
+3. 
+4. Same JSON payload as Step 1
+","1. Request body valid
+2. Token applied
+3. Response = 201 Created, response body contains new user ID
+4. Response = 422 Unprocessable Entity, error “email has already been taken”
+",,,,,High,Major,Manual,Functional,,false,
+14,"RL-4 — Pagination Non-overlap between Page 1 & 2",Reliability,4,"Nicole Nealy",204083,Passed,"2025-09-07 23:41:59","1. Create POST request to `{{baseUrl}}/users`
+2. Add Authorization header
+3. Send the first request
+4. Resend the exact same request
+","1. JSON body with unique email: `{""name"": ""Duplicate Email User"", ""gender"": ""female"", ""email"": ""qasignal+123@example.com"", ""status"": ""active""}`
+2. Authorization: Bearer {{token}}
+3. 
+4. Same JSON payload as Step 1
+","1. Request body valid
+2. Token applied
+3. Response = 201 Created, response body contains new user ID
+4. Response = 422 Unprocessable Entity, error “email has already been taken”
+","1. Passed
+2. Passed
+3. Passed
+4. Passed
+","1. Request body valid
+2. Token applied
+3. Response = 201 Created, response body contains new user ID
+4. Response = 422 Unprocessable Entity, error “email has already been taken”",,,High,Major,Manual,Functional,,false,
