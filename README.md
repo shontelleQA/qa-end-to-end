@@ -66,9 +66,8 @@ It reflects how I think as a tester: curious about the *why*, focused on the *ho
 
 This repository is part of a larger portfolio that forms a full QA architecture:
 
-- [**QA Automation (Selenium E-Commerce)**](../qa-automation-python-selenium-ecommerce) – Frontend + API automation framework  
-- [**Healthcare Data QA (ETL Validation)**](../healthcare-data-qa) – Backend + data pipeline validation  
-
+- [**QA Automation (Selenium E-Commerce)**](https://github.com/shontelleQA/qa-automation-python-selenium-ecommerce) – Frontend + API automation framework  
+- [**Healthcare Data QA (ETL Validation)**](https://github.com/shontelleQA/healthcare-data-qa) – Backend + data pipeline validation  
 Together, these projects show how I verify **data integrity across the full stack** — from user click to database record.
 
 ---
