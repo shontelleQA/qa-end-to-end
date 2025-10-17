@@ -7,14 +7,13 @@ This repository showcases my work as a **Software QA Analyst**, focusing on real
 ## 📁 Project Structure
 
 ```bash
-qa-portfolio-shontelle-nicole/
-├── 01_ui_workflow_testing/      # Manual testing on public apps (OrangeHRM, SauceDemo) 
-├── 02-api-testing/           # Postman collections + API test documentation 
-├── 03-test-automation/       # Selenium WebDriver automation projects (In progress)
-├── 05_learning_lab/          # Deep dives, analysis, QA artifacts 
-├── 05-python-projects/       # Python scripting and logic-based projects (In progress)
-├── 04_process_quality/       # Process QA projects – audits, SOPs, and defect monitoring
-├── 03_data_validation_sql/           # Backend-focused testing with SQL validation on stored form data
+qa-end-to-end/
+├── 01_ui_workflow_testing/      # Manual + exploratory testing on live apps (OrangeHRM, SauceDemo)
+├── 02_api_validation/           # Postman collections, Python API tests, and schema validation
+├── 03_data_validation_sql/      # Backend SQL validation for stored form data and data integrity checks
+├── 04_process_quality/          # QA process artifacts — audits, SOPs, and defect trend monitoring
+├── 05_learning_lab/             # QA strategy notes, cheat sheets, and testing playbooks
+└── README.md                    # Project overview, documentation, and outcomes
 
 ```
 ---
