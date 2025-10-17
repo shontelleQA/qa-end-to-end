@@ -1,6 +1,19 @@
-# 🧪 QA Portfolio – Nicole Nealy
+# 🧪 QA Systems Validation Suite – Nicole Nealy
 
-This repository showcases my work as a **Software QA Analyst**, focusing on real testing projects, functional workflows, API validation, and early-stage automation using live, testable applications. Each folder documents hands-on work aligned with Agile QA roles — including test planning, case design, execution logs, and defect tracking.
+Welcome!  
+This repository showcases how I approach **end-to-end software quality assurance** — from user-facing workflows to API and database validation. It’s the bridge between manual testing, automation, and process QA, built to reflect how real teams trace data across multiple layers of a system.
+
+---
+
+## 🎯 Purpose
+
+To demonstrate how I validate data integrity and user workflows across UI, API, and backend systems — using realistic test artifacts, automation, and documentation that mirrors Agile QA practices.
+
+This repo represents the **integration layer** of my portfolio, connecting:
+- UI testing (what users see)
+- API validation (how data moves)
+- SQL verification (where data lives)
+- Process QA (how teams maintain quality)
 
 ---
 
@@ -17,54 +30,69 @@ qa-end-to-end/
 
 ```
 ---
+## 🧱 What’s Inside
 
-## ▶️ Process QA Projects
-
-This section highlights structured Process QA work, including defect monitoring, SOP documentation, and internal audit simulations aligned to healthcare and insurance industry standards.
-
-- [📈 Defect Trend Monitoring and Reporting – MedAccess Claims Portal (March 2025)](04_process_quality/01-defect-trend-monitoring/)
-- [🔒 SOP Documentation and QA Readiness Guide – User Login Process (March 2025)](04_process_quality/02-sop-qa-readiness/)
-- [🛡️ Internal Audit Simulation – MedAccess Claims Portal (March 2025)](04_process_quality/03-internal-audit-simulation/)
-
----
-
-## 🧮 SQL QA Projects
-
-This section focuses on backend data validation using SQL — testing what happens *after* a user submits a form, and ensuring that frontend behaviors are accurately stored in the database. These tests mimic real-world QA scenarios tied to payments, records, and service requests.
-
-- [📬 Form Submission Tracker – SQL Data Validation (May 2025)](03_data_validation_sql/01_form_submission_sql_project/)
+| Area | Description |
+|------|--------------|
+| 🧪 **UI Workflow Testing** | Test plans, execution logs, and screenshots from manual QA cycles on public test apps. |
+| 🔗 **API Validation** | Postman CRUD collections and Python tests that confirm data accuracy and schema compliance. |
+| 🧮 **Data Validation (SQL)** | SQL-based backend checks ensuring submitted form data is stored, transformed, and retrieved correctly. |
+| 🧾 **Process Quality & Audits** | SOP readiness guides, defect trend analysis, and internal audit simulations. |
+| 📚 **Learning Lab** | QA strategy notes, exploratory testing exercises, and mini playbooks from my ongoing study. |
 
 ---
 
-## 🎯 Role Alignment
+## 📊 Sample Evidence
 
-This portfolio reflects work done in the scope of a QA Analyst or Manual QA role:
+- ✅ Functional tests executed in **Qase**, linked to a traceability matrix  
+- 🔗 **Postman** chained request flows with positive and negative assertions  
+- 🧮 **SQL queries** validating record counts and transformation logic  
+- 📈 **Defect trend charts** and root-cause notes from process QA cycles  
 
-- ✅ Manual test case design and execution
-- ✅ Test planning, exploratory testing, and defect tracking
-- ✅ API validation using Postman
-- ✅ Root cause investigation and regression testing
-- ✅ SQL data checks and backend flow validation
-- ✅ Agile-aligned documentation and sprint-style delivery
-- ✅ Process quality monitoring, internal auditing, and SOP validation
+Screenshots and documentation for each are stored inside their respective subfolders.
 
-Each project includes real artifacts — test plans, screenshots, traceability matrices, execution logs, and defect summaries — to simulate how I contribute in a real team setting.
+---
+
+## 🧠 Outcome
+
+This suite demonstrates how I approach **system-level QA validation** — following the data journey from  
+`User Actions (UI)` → `API Requests` → `Database Storage` → `Reports & Audits`.
+
+It reflects how I think as a tester: curious about the *why*, focused on the *how*, and committed to building transparent QA processes that teams can trust.
+
+---
+
+## 🔗 See Also
+
+This repository is part of a larger portfolio that forms a full QA architecture:
+
+- [**QA Automation (Selenium E-Commerce)**](https://github.com/nicolenealy/qa-automation-python-selenium-ecommerce) – Frontend + API automation framework  
+- [**Healthcare Data QA (ETL Validation)**](https://github.com/nicolenealy/healthcare-data-qa) – Backend + data pipeline validation  
+
+Together, these projects show how I verify **data integrity across the full stack** — from user click to database record.
+
+---
+
+## 🧭 Visual Overview
+
+> **System Flow:**  
+> `User Interface` → `API Layer` → `Database` → `Reports & Process QA`
+
+*(A diagram version of this flow is available in `/docs/system_flow_diagram.png`, or on [TestLikeAGirl.com](https://testlikeagirl.com) in the companion case study.)*
 
 ---
 
 ## 📫 Let’s Connect
 
-I'm currently exploring:
+I’m currently exploring:
 
-- Manual QA or hybrid testing roles  
-- Healthcare, edtech, or purpose-driven QA projects  
-- Contract or full-time QA opportunities  
-- Coffee chats with other testers and tech folks
+- Manual QA and hybrid testing roles  
+- Healthcare, edtech, or mission-driven tech projects  
+- Conversations around QA process improvement and data-driven testing  
 
-📍 Find me on [LinkedIn](https://www.linkedin.com/in/nicole-nealy/) if you're hiring, mentoring, or just want to talk shop about testing workflows, edge cases, or automation rabbit holes.
+📍 Connect on [**LinkedIn**](https://www.linkedin.com/in/nicole-nealy/)  
+to swap ideas, share frameworks, or talk shop about QA workflows and automation design.
 
 ---
 
-🔍 *Thanks for visiting. This work reflects how I test, how I think, and how I document — with clarity, curiosity, and a whole lot of Ctrl+F.*
-
-
+🔍 *Thanks for stopping by. This repo reflects how I test, how I think, and how I document — with clarity, curiosity, and care.*
