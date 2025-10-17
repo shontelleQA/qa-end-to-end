@@ -44,7 +44,7 @@ When documenting bugs, I ensure:
 
 ## 🔗 Related Work
 
-- [OrangeHRM Employee Flow Testing](../01-live-app-testing/OrangeHRM_EmployeeFlow/03_execution_logs/) — Example of structured defect reporting during manual testing.
+- [OrangeHRM Employee Flow Testing](../01_ui_workflow_testing/OrangeHRM_EmployeeFlow/03_execution_logs/) — Example of structured defect reporting during manual testing.
 - [GoRest API Testing](../02-api-testing/gorest_api/03_defects/) — Sample defect logging for API workflow validations.
 
 

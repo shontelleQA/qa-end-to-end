@@ -9,7 +9,7 @@ It simulates a real sprint cycle including test planning, manual test case desig
 ## 📁 Project Structure
 
 ```bash
-01-live-app-testing/
+01_ui_workflow_testing/
 └── 01-orangehrm-employee-flow/
     ├── test-plan/           # Test plan (scope, env, objectives, outcomes)
     ├── test-cases/          # Test design (XLSX + PDF export)

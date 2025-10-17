@@ -57,7 +57,7 @@ I view exploratory testing as a creative, analytical exercise that complements s
 
 ## 🔗 Related Work
 
-- [OrangeHRM Employee Flow Testing](../01-live-app-testing/OrangeHRM_EmployeeFlow/) — Full exploratory and functional testing artifacts.
+- [OrangeHRM Employee Flow Testing](../01_ui_workflow_testing/OrangeHRM_EmployeeFlow/) — Full exploratory and functional testing artifacts.
 - [GoRest API Testing](../02-api-testing/gorest_api/) — Comprehensive API manual testing with exploratory validation examples.
 
 

@@ -8,13 +8,13 @@ This repository showcases my work as a **Software QA Analyst**, focusing on real
 
 ```bash
 qa-portfolio-shontelle-nicole/
-├── 01-live-app-testing/      # Manual testing on public apps (OrangeHRM, SauceDemo) 
+├── 01_ui_workflow_testing/      # Manual testing on public apps (OrangeHRM, SauceDemo) 
 ├── 02-api-testing/           # Postman collections + API test documentation 
 ├── 03-test-automation/       # Selenium WebDriver automation projects (In progress)
-├── 04-learning-lab/          # Deep dives, analysis, QA artifacts 
+├── 05_learning_lab/          # Deep dives, analysis, QA artifacts 
 ├── 05-python-projects/       # Python scripting and logic-based projects (In progress)
-├── 06-process-quality/       # Process QA projects – audits, SOPs, and defect monitoring
-├── 07-sql-testing/           # Backend-focused testing with SQL validation on stored form data
+├── 04_process_quality/       # Process QA projects – audits, SOPs, and defect monitoring
+├── 03_data_validation_sql/           # Backend-focused testing with SQL validation on stored form data
 
 ```
 ---
@@ -23,9 +23,9 @@ qa-portfolio-shontelle-nicole/
 
 This section highlights structured Process QA work, including defect monitoring, SOP documentation, and internal audit simulations aligned to healthcare and insurance industry standards.
 
-- [📈 Defect Trend Monitoring and Reporting – MedAccess Claims Portal (March 2025)](06-process-quality/01-defect-trend-monitoring/)
-- [🔒 SOP Documentation and QA Readiness Guide – User Login Process (March 2025)](06-process-quality/02-sop-qa-readiness/)
-- [🛡️ Internal Audit Simulation – MedAccess Claims Portal (March 2025)](06-process-quality/03-internal-audit-simulation/)
+- [📈 Defect Trend Monitoring and Reporting – MedAccess Claims Portal (March 2025)](04_process_quality/01-defect-trend-monitoring/)
+- [🔒 SOP Documentation and QA Readiness Guide – User Login Process (March 2025)](04_process_quality/02-sop-qa-readiness/)
+- [🛡️ Internal Audit Simulation – MedAccess Claims Portal (March 2025)](04_process_quality/03-internal-audit-simulation/)
 
 ---
 
@@ -33,7 +33,7 @@ This section highlights structured Process QA work, including defect monitoring,
 
 This section focuses on backend data validation using SQL — testing what happens *after* a user submits a form, and ensuring that frontend behaviors are accurately stored in the database. These tests mimic real-world QA scenarios tied to payments, records, and service requests.
 
-- [📬 Form Submission Tracker – SQL Data Validation (May 2025)](07-sql-testing/01_form_submission_sql_project/)
+- [📬 Form Submission Tracker – SQL Data Validation (May 2025)](03_data_validation_sql/01_form_submission_sql_project/)
 
 ---
 
