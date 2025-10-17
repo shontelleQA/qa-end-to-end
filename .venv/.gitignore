@@ -1,0 +1,62 @@
+# ---------------------------
+# Python
+# ---------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# ---------------------------
+# IDEs / Editors
+# ---------------------------
+.vscode/
+.idea/
+*.iml
+
+# ---------------------------
+# OS-specific
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# Pytest / Coverage
+# ---------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---------------------------
+# Node / Postman extras
+# ---------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------------------------
+# Reports & Logs
+# ---------------------------
+*.log
+*.tmp
+
+# ---------------------------
+# ✅ Keep important artifacts
+# ---------------------------
+# Don’t ignore these (explicitly allow them if a pattern above matches)
+!requirements.txt
+!*.md
+!*.pdf
+!*.csv
+!*.xlsx
+
